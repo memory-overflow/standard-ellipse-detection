@@ -94,10 +94,6 @@ int main(int argc, char* argv[]) {
 
     }
     cv::imshow("detected result", board);
-    argv[i][strlen(argv[i]) - 4] = '\0';
-    std::string file_name(argv[i]);
-    file_name = file_name + "_result.jpg";
-    cv::imwrite(file_name, board);
     cv::waitKey(0);
   }
 #endif

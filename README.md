@@ -62,8 +62,8 @@ std::vector<Pixel> inliers;
 ```
 
 # 效果图
-[图1](https://github.com/memory-overflow/standard-ellipse-detection/blob/master/images/test12_result.jpg)
+![图1](https://github.com/memory-overflow/standard-ellipse-detection/blob/master/images/test12_result.jpg)
 
-[图2](https://github.com/memory-overflow/standard-ellipse-detection/blob/master/images/test6_result.jpg)
+![图2](https://github.com/memory-overflow/standard-ellipse-detection/blob/master/images/test6_result.jpg)
 
-[图3](https://github.com/memory-overflow/standard-ellipse-detection/blob/master/images/test9_result.jpg)
+![图3](https://github.com/memory-overflow/standard-ellipse-detection/blob/master/images/test9_result.jpg)
