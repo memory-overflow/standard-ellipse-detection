@@ -8,7 +8,7 @@
 #include "opencv2/imgproc/imgproc.hpp"
 
 using namespace std;
-using namespace MINI;
+using namespace zgh;
 using namespace cv;
 
 

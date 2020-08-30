@@ -1,7 +1,7 @@
 /*
  *Copyright: Copyright (c) 2019
  *Created on 2019-5-21
- *Author:zhengaohong@minieye.cc
+ *Author:zhengaohong@zgheye.cc
  *Version 1.0.1
 */
 
@@ -12,7 +12,7 @@
 #include "defines.h"
 
 
-namespace MINI {
+namespace zgh {
 
 bool calculateGradient(const uint8_t *image, int row, int col, double *angles) {
   double *mod = new double[row * col];
@@ -524,4 +524,4 @@ bool gaussianSampler(const uint8_t *ori_data, int ori_row, int ori_col,
 }
 
 
-} // MINI
+} // zgh

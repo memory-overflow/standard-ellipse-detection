@@ -1,7 +1,7 @@
 /*
  *Copyright: Copyright (c) 2019
  *Created on 2019-5-21
- *Author:zhengaohong@minieye.cc
+ *Author:zhengaohong@zgheye.cc
  *Version 1.0.1
 */
 
@@ -21,7 +21,7 @@
 #include "cvcannyapi.h"
 
 
-namespace MINI {
+namespace zgh {
 
 bool lsdgroups(const double *image, int row, int col, double scale, std::vector<std::shared_ptr<Arc> >& arcs) {
   std::vector<std::shared_ptr<Lined> > lines;
@@ -819,4 +819,4 @@ bool detectEllipse(const uint8_t *image, int row, int col,
   return true;
 }
 
-} // namespace MINI
+} // namespace zgh

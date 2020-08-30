@@ -1,7 +1,7 @@
 /*
  *Copyright: Copyright (c) 2019
  *Created on 2019-5-24
- *Author:zhengaohong@minieye.cc
+ *Author:zhengaohong@zgheye.cc
  *Version 1.0.1
 */
 
@@ -11,7 +11,7 @@
 #include "detect.h"
 #include "unitily.h"
 
-namespace MINI {
+namespace zgh {
   
 
 static bool ll_angle(const double *data, double *angles, double *mod, std::vector<Pixel> &sort_points,
@@ -531,4 +531,4 @@ bool lineSegmentDetection(const double *image, int row, int col, std::vector<std
   return true;
 }
 
-} // namespace MINI
+} // namespace zgh

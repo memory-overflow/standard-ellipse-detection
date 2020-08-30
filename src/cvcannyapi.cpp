@@ -1,7 +1,7 @@
 /*
  *Copyright: Copyright (c) 2019
  *Created on 2019-6-27
- *Author:zhengaohong@minieye.cc
+ *Author:zhengaohong@zgheye.cc
  *Version 1.0.1
 */
 
@@ -13,7 +13,7 @@
 #include "cvcannyapi.h"
 #include "defines.h"
 
-namespace MINI {
+namespace zgh {
 
 using namespace cv;
 
@@ -345,4 +345,4 @@ bool calculateGradient3(const uint8_t* data, int row, int col, double* angles) {
   return true;
 }
 
-} // namespace MINI
+} // namespace zgh

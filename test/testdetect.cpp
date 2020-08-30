@@ -1,7 +1,7 @@
 /*
  *Copyright: Copyright (c) 2019
  *Created on 2019-6-31
- *Author:zhengaohong@minieye.cc
+ *Author:zhengaohong@zgheye.cc
  *Version 1.0.1
 */
 
@@ -16,7 +16,7 @@
 #include "ellipse_detection/detect.h"
 
 using namespace std;
-using namespace MINI;
+using namespace zgh;
 
 int main(int argc, char* argv[]) {
   if (argc <= 1) {

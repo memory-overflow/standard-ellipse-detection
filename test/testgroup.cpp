@@ -1,7 +1,7 @@
 /*
  *Copyright: Copyright (c) 2019
  *Created on 2019-6-20
- *Author:zhengaohong@minieye.cc
+ *Author:zhengaohong@zgheye.cc
  *Version 1.0.1
 */
 
@@ -16,7 +16,7 @@
 
 using namespace std;
 using namespace cv;
-using namespace MINI;
+using namespace zgh;
 
 
 

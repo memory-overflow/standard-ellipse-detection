@@ -1,7 +1,7 @@
 /*
  *Copyright: Copyright (c) 2019
  *Created on 2019-5-21
- *Author:zhengaohong@minieye.cc
+ *Author:zhengaohong@zgheye.cc
  *Version 1.0.1
 */
 
@@ -20,7 +20,7 @@
 #include "defines.h"
 #include "unitily.h"
 
-namespace MINI {
+namespace zgh {
 
 
 template <typename T>
@@ -229,10 +229,10 @@ class FuncTimerDecorator {
 };
 
 
-} // namespace MINI
+} // namespace zgh
 
 
-namespace MINI {
+namespace zgh {
 
 /*--------------------------------------------------------------*/
 
@@ -587,7 +587,7 @@ inline Ellipse::Ellipse(double a, double b, double c, double d, double e, double
   double Av = -d * sint + e * cost;
   double Auu = a * cos_squared + c * sin_squared + b * cos_sin;
   double Avv = a * sin_squared + c * cos_squared - b * cos_sin;
-  if (MINI::equal(0.0, Auu) || MINI::equal(0.0, Avv)) {
+  if (zgh::equal(0.0, Auu) || zgh::equal(0.0, Avv)) {
     this->a = this->b = this->phi = 0;
   } else {
     double tuCentre = -Au / (2.0 * Auu);
@@ -1011,7 +1011,7 @@ std::ostream& operator << (std::ostream& out, const Point_<T>&& pt) {
   return out;
 }
 
-} // namespace MINI
+} // namespace zgh
 
 
 

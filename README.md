@@ -35,14 +35,15 @@ make
 ```
 
 4. 接口和使用方法
-代码中引用头文件`#include "ellipse_detection/detect.h"`，接口说明
+代码中引用头文件`#include "ellipse_detection/detect.h"`，然后引入namespace zgh。
+接口说明
 ```
 bool detectEllipse(const uint8_t *image, int height, int width,
                    std::vector<std::shared_ptr<Ellipse> > &ells,
                    int polarity = 0, double line_width = 2.0);
 ```
 - 输入:
-    - image 图像原始数据，按照"BRG"排列
+    - image 图像原始数据，灰度图
     - height 图像高度
     - width 图像宽度
     - polarity 表示椭圆极，默认为 0。

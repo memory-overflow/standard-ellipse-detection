@@ -1,7 +1,7 @@
 /*
  *Copyright: Copyright (c) 2019
  *Created on 2019-5-21
- *Author:zhengaohong@minieye.cc
+ *Author:zhengaohong@zgheye.cc
  *Version 1.0.1
 */
 
@@ -10,7 +10,7 @@
 #include "unitily.h"
 #include "defines.h"
 
-namespace MINI {
+namespace zgh {
 
 
 bool equal(int x, int y) {
@@ -222,4 +222,4 @@ double nfa(int n, int k, double p, double logNT) {
   return nfavalue;
 }
 
-} // namespace MINI
+} // namespace zgh

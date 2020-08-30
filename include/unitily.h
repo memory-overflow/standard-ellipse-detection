@@ -1,7 +1,7 @@
 /*
  *Copyright: Copyright (c) 2019
  *Created on 2019-5-21
- *Author:zhengaohong@minieye.cc
+ *Author:zhengaohong@zgheye.cc
  *Version 1.0.1
 */
 
@@ -9,7 +9,7 @@
 #ifndef _INCLUDE_UNITILT_H_
 #define _INCLUDE_UNITILT_H_
 
-namespace MINI {
+namespace zgh {
 
 bool equal(int x, int y);
 
@@ -39,7 +39,7 @@ double log_gamma_lanczos(double x);
 
 double nfa(int n, int k, double p, double logNT);
 
-} // namespace MINI
+} // namespace zgh
 
 
 #endif // _INCLUDE_UNITILT_H_

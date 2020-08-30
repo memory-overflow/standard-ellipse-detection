@@ -1,7 +1,7 @@
 /*
  *Copyright: Copyright (c) 2019
  *Created on 2019-5-21
- *Author:zhengaohong@minieye.cc
+ *Author:zhengaohong@zgheye.cc
  *Version 1.0.1
 */
 
@@ -11,7 +11,7 @@
 
 #include <cmath>
 
-namespace MINI {
+namespace zgh {
 
 #ifndef M_LN10
 #define M_LN10 2.30258509299404568402    // ln10
@@ -58,6 +58,6 @@ const double MIN_ELLIPSE_THRESHOLD_LENGTH = 2.0;
 
 const double REGION_LIMITATION_DIS_TOLERACE = -3.0 * MIN_ELLIPSE_THRESHOLD_LENGTH;
 
-} // namespace MINI
+} // namespace zgh
 
 #endif // _INCLUDE_DEFINES_H_

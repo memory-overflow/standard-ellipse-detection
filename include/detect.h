@@ -1,7 +1,7 @@
 /*
  *Copyright: Copyright (c) 2019
  *Created on 2019-5-22
- *Author:zhengaohong@minieye.cc
+ *Author:zhengaohong@zgheye.cc
  *Version 1.0.1
 */
 
@@ -11,7 +11,7 @@
 #include "types.hpp"
 
 
-namespace MINI {
+namespace zgh {
 
 bool lineSegmentDetection(const double *image, int row, int col,
                           std::vector<std::shared_ptr<Lined> > &lines);
@@ -37,7 +37,7 @@ bool detectEllipse(const uint8_t *image, int row, int col,
                    int polarity = 0, double width = 2.0);
 
 }
-//namespace MINI
+//namespace zgh
 
 
 #endif // _INCLUDE_DETECT_H_
