@@ -68,3 +68,5 @@ std::vector<Pixel> inliers;
 ![图2](https://github.com/memory-overflow/standard-ellipse-detection/blob/master/images/test6_result.jpg)
 
 ![图3](https://github.com/memory-overflow/standard-ellipse-detection/blob/master/images/test9_result.jpg)
+
+有问题欢迎联系 zhengaohong@gmail.com
