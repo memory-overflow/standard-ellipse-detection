@@ -29,7 +29,9 @@ set (CMAKE_CXX_STANDARD_REQUIRE ON)
 set (EXECUTABLE_OUTPUT_PATH "${PROJECT_BINARY_DIR}/bin")
 set (LIBRARY_OUTPUT_PATH "${PROJECT_BINARY_DIR}/lib")
 
-include_directories ("${PROJECT_SOURCE_DIR}/include")
+include_directories (
+  ${OpenCV_INCLUDE_DIRS}
+  "${PROJECT_SOURCE_DIR}/include")
 
 add_definitions ("-Wall")
 
