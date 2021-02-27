@@ -8,6 +8,7 @@ set (OpenCV_FOUND 1)
 find_package (OpenCV REQUIRED)
 
 project (tests)
+include_directories(${CMAKE_SOURCE_DIR}/include)
 
 add_executable (testtype testtype.cpp)
 target_link_libraries (testtype ellipse_detection ${OpenCV_LIBS})
