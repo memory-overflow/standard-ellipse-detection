@@ -46,15 +46,15 @@ bool detectEllipse(const uint8_t *image, int height, int width,
     - image 图像原始数据，灰度图
     - height 图像高度
     - width 图像宽度
-    - polarity 表示椭圆极，默认为 0。
-    - line_width 椭圆线宽
+    - polarity 表示椭圆极性，-1、0、1, 默认为 0，检测所有极性。
+    - line_width 椭圆线宽，推荐使用默认值
 - 输出
     - ells 检测到的椭圆列表
 
 关于 Ellipse 结构的说明
 ```
 Pointd o; // 椭圆中心点
-double a, b; // 短半轴线，长半轴长度
+double a, b; // 短半轴长度，长半轴长度
 double phi; // 偏角，单位为弧度
 int polarity; // 极性
 double goodness; // 椭圆评分
@@ -69,4 +69,4 @@ std::vector<Pixel> inliers;
 
 ![图3](https://github.com/memory-overflow/standard-ellipse-detection/blob/master/images/test9_result.jpg)
 
-有问题欢迎联系 zhengaohong@gmail.com
+有问题欢迎联系 zhengaohong@gmail.com, wechat: islands___
