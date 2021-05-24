@@ -21,7 +21,11 @@ project (${PACKAGE_NAME} VERSION ${PACKAGE_VERSION} LANGUAGES CXX)
 set (OpenCV_FOUND 1)
 find_package (OpenCV REQUIRED)
 
-set (OTHER_LIBS -llapack)
+# Manual set open library
+#include_directories(/xxx/opencv_tag_v3.2.0)
+#include_directories (/xxx/opencv_tag_v3.2.0/include)
+#link_directories(/xxx/opencv_tag_v3.2.0/lib)
+set (OTHER_LIBS -llapack -lblas -lgfortran)
 
 set (CMAKE_CXX_STANDARD 11)
 set (CMAKE_CXX_STANDARD_REQUIRE ON)
@@ -41,8 +45,13 @@ set (DEPEND_FILE
   "src/cvcannyapi.cpp"
 )
 
-add_library (${PACKAGE_NAME} ${DEPEND_FILE})
+set (Opencv_LIBS
+    -lopencv_core
+    -lopencv_imgproc
+    -lopencv_highgui
+)
 
+add_library (${PACKAGE_NAME} ${DEPEND_FILE})
 target_link_libraries(${PACKAGE_NAME} ${Opencv_LIBS} ${OTHER_LIBS})
 
 set (PUBLIC_HDRS

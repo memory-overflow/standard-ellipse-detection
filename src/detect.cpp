@@ -72,7 +72,7 @@ bool lsdgroups(const double *image, int row, int col, double scale, std::vector<
                 max_vote = 1;
               } else if (cnt > max_vote){
                 max_idx = line_id;
-                max_vote = cnt;  
+                max_vote = cnt;
               }
             }
           }
@@ -108,8 +108,8 @@ bool lsdgroups(const double *image, int row, int col, double scale, std::vector<
         } else {
           downdir.rotation(PI_4);
         }
-        
-      
+
+
         std::unordered_map<int, int> vote;
         int max_vote = 0, max_idx = -1;
 
@@ -127,7 +127,7 @@ bool lsdgroups(const double *image, int row, int col, double scale, std::vector<
                 max_vote = 1;
               } else if (cnt > max_vote){
                 max_idx = line_id;
-                max_vote = cnt;  
+                max_vote = cnt;
               }
             }
           }
@@ -175,7 +175,7 @@ bool lsdgroups(const double *image, int row, int col, double scale, std::vector<
   return true;
 }
 
-bool getValidInitialEllipseSet(const uint8_t *image, 
+bool getValidInitialEllipseSet(const uint8_t *image,
                                const double *angles,
                                int row, int col,
                                std::vector<std::shared_ptr<Ellipse> > &ells,
@@ -228,7 +228,7 @@ bool getValidInitialEllipseSet(const uint8_t *image,
 
 static bool meanShift(const std::vector<double> &data, std::vector<double> &init_data, int dims,
                       double sigma, double windos_size, double accuracy_tolerance, int iter_times) {
-  
+
   double temparr[8];
   int nquerrues = (int)init_data.size() / dims;
   int data_num = (int)data.size() / dims;
@@ -236,7 +236,7 @@ static bool meanShift(const std::vector<double> &data, std::vector<double> &init
   double radius2 = windos_size * windos_size;
   double tolerance = accuracy_tolerance;
   int maxiters = iter_times;
-  
+
   std::vector<double> dis(data_num);
   for (int loop = 0; loop < nquerrues; ++loop) {
     int iters = 0;
@@ -273,7 +273,7 @@ static bool meanShift(const std::vector<double> &data, std::vector<double> &init
         init_data[loop * dims + d] /= denominator;
         temp += sqr(init_data[loop * dims + d] - temparr[d]);
       }
-    
+
       if (sqrt(temp) < tolerance) {
         break;
       }
@@ -285,7 +285,7 @@ static bool meanShift(const std::vector<double> &data, std::vector<double> &init
 
 static bool clusterByDistance(std::vector<double> &data, int dims, double distance_threshold,
                               double number_control) {
-  
+
   double threshold2 = distance_threshold * distance_threshold;
   int npoints = (int)data.size() / dims;
   if (npoints == 1) {
@@ -338,7 +338,7 @@ static bool cluster2DPoints(const std::vector<std::shared_ptr<Ellipse> > &ells,
                             std::vector<Pointd> &cluster_center,
                             double distance_tolerance,
                             int data_type) {
-  
+
   int nbinx, nbiny;
   double xmax, ymax, xmin, ymin;
   xmax = ymax = 0;
@@ -413,7 +413,7 @@ static bool cluster2DPoints(const std::vector<std::shared_ptr<Ellipse> > &ells,
 static bool cluster1DDatas(const std::vector<std::shared_ptr<Ellipse> > &ells,
                            std::vector<double> &cluster_center,
                            double distance_tolerance) {
-  
+
   double val_max = 0;
   double val_min = DBL_MAX;
   std::vector<double> data;
@@ -430,7 +430,7 @@ static bool cluster1DDatas(const std::vector<std::shared_ptr<Ellipse> > &ells,
   if (nbins <= 0) {
     nbins = 1;
   }
-  // first sum, second vote; 
+  // first sum, second vote;
   std::vector<std::pair<double, int> > bindata(nbins, std::make_pair(0.0, 0));
   for (auto &ell : ells) {
     int r = (int)floor((ell->phi - val_min) / val_delta * nbins + 0.5);
@@ -455,7 +455,7 @@ static bool cluster1DDatas(const std::vector<std::shared_ptr<Ellipse> > &ells,
 
   // 均值漂移
   meanShift(data, cluster_center, 1, 1, distance_tolerance, 1e-6, 20);
-  
+
   // 按照距离阈值聚类
   clusterByDistance(cluster_center, 1, distance_tolerance / 2, 40);
 
@@ -463,7 +463,7 @@ static bool cluster1DDatas(const std::vector<std::shared_ptr<Ellipse> > &ells,
 }
 
 bool generateEllipseCandidates(const uint8_t *image, const double *angles,
-                               int row, int col, 
+                               int row, int col,
                                std::vector<std::shared_ptr<Ellipse> > &ells, int polarity) {
 
   std::vector<std::shared_ptr<Ellipse> > ells_init;
@@ -477,12 +477,12 @@ bool generateEllipseCandidates(const uint8_t *image, const double *angles,
 
 
   // 最外层椭圆中心聚类　第二层椭圆 phi　聚类　第三层椭圆长短轴聚类
-  
+
   std::vector<Pointd> cluster_center;
   cluster2DPoints(ells_init, cluster_center, MIN_ELLIPSE_THRESHOLD_LENGTH, 0);
 
   int center_num = (int)cluster_center.size();
-  
+
   std::vector<std::vector<std::shared_ptr<Ellipse> > > ells_center(center_num);
 
   // TODO(using KD tree optimization if necessary)
@@ -513,7 +513,7 @@ bool generateEllipseCandidates(const uint8_t *image, const double *angles,
 
     std::sort(cluster_phi.begin(), cluster_phi.end());
     std::sort(ells_c.begin(), ells_c.end(),
-      [](std::shared_ptr<Ellipse> &ea, std::shared_ptr<Ellipse> &eb) {
+      [](const std::shared_ptr<Ellipse> &ea, const std::shared_ptr<Ellipse> &eb) {
         return ea->phi < eb->phi;
       });
     int p = 0;
@@ -636,7 +636,7 @@ static bool subdetect(double *angles, int row, int col, double min_cover_angle,
     if (issame) {
       continue;
     }
-    
+
     double beta = PI * (1.5 * (ell->a + ell->b) - sqrt(ell->a * ell->b));
     int tbins = min(180, (int)floor(beta * tr));
     std::vector<Pixel> inliers_t;
@@ -733,7 +733,7 @@ static bool subdetect(double *angles, int row, int col, double min_cover_angle,
   return true;
 }
 
-bool detectEllipse(const uint8_t *image, int row, int col, 
+bool detectEllipse(const uint8_t *image, int row, int col,
                    std::vector<std::shared_ptr<Ellipse> > &ells, int polarity, double width) {
 
   // calc the gradient
@@ -749,9 +749,9 @@ bool detectEllipse(const uint8_t *image, int row, int col,
   double tr = 0.6;
   double distance_tolerance = MIN_ELLIPSE_THRESHOLD_LENGTH;
   double normal_tolerance = cos(PI / 12.0);
-  
 
-  
+
+
   std::vector<Pixel> inliers_positive, inliers_negative, inliers_all;
   std::vector<std::shared_ptr<Ellipse> > ells_temp;
   for (auto &ell : ells) {

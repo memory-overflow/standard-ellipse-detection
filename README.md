@@ -4,7 +4,7 @@
 
 # ubuntu 的使用方法
 1. 首先需要安装两个库的支持，opencv 库，这个可以搜一下网上的教程安装一下。第二个库是一个矩阵运算的库lapack，需要源码安装。
-先下载[lapack源码](https://github.com/Reference-LAPACK/lapack/archive/v3.9.0.tar.gz)，这个库是gfortran写的，所以要先`sudo apt-get install gfortran`安装gfortran。
+先下载[lapack源码](https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.9.1.tar.gz)，这个库是gfortran写的，所以要先`sudo apt-get install gfortran`安装gfortran。
 然后
 ```
 tar -xzvf lapack-3.9.0.tar.gz && cd lapack-3.9.0
@@ -13,7 +13,8 @@ cmake ..
 make -j7
 sudo make install
 sudo ldconfig
-sudo cp sudo cp LAPACKE/include/*.h /usr/local/include/
+cd ..
+sudo cp LAPACKE/include/*.h /usr/local/include/
 ```
 
 2. 安装ellipse-detection库
