@@ -7,7 +7,7 @@
 先下载[lapack源码](https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.9.1.tar.gz)，这个库是gfortran写的，所以要先`sudo apt-get install gfortran`安装gfortran。
 然后
 ```
-tar -xzvf lapack-3.9.0.tar.gz && cd lapack-3.9.0
+tar -xzvf lapack-3.9.1.tar.gz && cd lapack-3.9.1
 mkdir build && cd build
 cmake ..
 make -j7
