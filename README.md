@@ -5,7 +5,7 @@
 # 安装
 ## Ubuntu
 ### install opencv
-opencv 需要通过源码安装，opencv 的安装可以参考博客 https://blog.csdn.net/Arthur_Holmes/article/details/100146463, 注意本项目中一定要安装 opencv3 的版本，否则可能会有兼容性问题。
+opencv 需要通过源码安装，ubuntu opencv 的安装可以参考博客 https://blog.csdn.net/Arthur_Holmes/article/details/100146463, 注意本项目中一定要安装 opencv3 的版本，否则可能会有兼容性问题。服务器版本无需安装图像化相关的库。
 
 ### install lapack
 lapack 是一个矩阵运算的库，也是需要源码安装。
@@ -34,7 +34,41 @@ make
 sudo make install
 ```
 
-### 接口和使用方法
+## Centos
+### install opencv
+opencv 需要通过源码安装，centos 的 opencv 的安装可以参考博客 https://www.jianshu.com/p/1cb1ca235eb3, 注意本项目中一定要安装 opencv3 的版本，否则可能会有兼容性问题。服务器版本无需安装图像化相关的库。
+
+
+### install lapack
+lapack 是一个矩阵运算的库，也是需要源码安装。
+先下载[lapack源码](https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.9.1.tar.gz)，lapack 是 gfortran 写的，要先`yum install gcc-gfortran`安装 gfortran 才能正常编译。
+
+由于 lapack 的编译需要 cmake3, 先安装 cmake3, `yum install cmake3`
+
+执行下面的操作完成 lapack 的安装
+```
+tar -xzvf lapack-3.9.1.tar.gz && cd lapack-3.9.1
+mkdir build && cd build
+cmake3 ..
+make -j7
+sudo make install
+sudo ldconfig
+cd ..
+sudo cp LAPACKE/include/*.h /usr/local/include/
+```
+
+### install ellipse-detection
+执行下面的操作完成安装
+```
+git clone https://github.com/memory-overflow/standard-ellipse-detection.git
+cd standard-ellipse-detection
+mkdir build && cd build
+cmake3 ..
+make
+sudo make install
+```
+
+# 接口和使用方法
 代码中引用头文件`#include "ellipse_detection/detect.h"`，然后引入namespace zgh。
 
 接口说明
@@ -63,10 +97,14 @@ double coverangle; // 椭圆角度完整程度
 std::vector<Pixel> inliers; // 构成的像素点
 ```
 
-### 测试
+
+## Ohter
+其他操作系统请自行按照 ubuntu 和 centos 的流程安装。
+
+# 测试
 提供了1个测试工具，可以查看算法效果。需要桌面版的操作系统才能显示图片，如果是服务器版本的操作系统，需要注释掉 imshow 部分。
 ```
-cmake .. -DBUILD_TESTING=ON
+cmake3 .. -DBUILD_TESTING=ON
 make
 ./bin/testdetect [image_dir1] [image_dir2] [image_dir3] ...
 ```
