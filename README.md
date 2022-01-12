@@ -67,6 +67,10 @@ cmake3 ..
 make
 sudo make install
 ```
+提供一个 centos server 的镜像，可以作为基础镜像开发，里面装好的依赖和库。
+```
+docker pull jisuanke/standard-ellipse-detection-centos7
+```
 
 # 接口和使用方法
 代码中引用头文件`#include "ellipse_detection/detect.h"`，然后引入namespace zgh。
