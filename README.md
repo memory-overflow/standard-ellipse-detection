@@ -10,6 +10,8 @@
 
 ![图3](https://github.com/memory-overflow/standard-ellipse-detection/blob/master/images/test9_result.jpg)
 
+微信小程序搜索椭圆识别可以自己体验效果。
+
 # 安装
 ## Ubuntu
 ### Install opencv
