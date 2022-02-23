@@ -83,7 +83,7 @@ docker pull jisuanke/standard-ellipse-detection-centos7
 ```
 
 
-## Ohter system
+## Other system
 其他操作系统请自行按照 ubuntu 和 centos 的流程安装。
 
 # 接口和使用方法
