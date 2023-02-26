@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
   // if (argc <= 1) {
   //   std::cout << "[Usage]: testdetect [image_dir1] [image_dir2] [image_dir3] ..." << std::endl;
   // }
-#if 1
+#if 0
   VideoCapture cap(0);
   Mat board;
   // int cnt = 0;

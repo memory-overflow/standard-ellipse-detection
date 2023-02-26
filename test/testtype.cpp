@@ -1,5 +1,5 @@
 #include <cassert>
-#include "ellipse_detection/types.hpp"
+#include "types.hpp"
 
 
 #include "opencv2/core.hpp"

@@ -11,9 +11,9 @@
 #include "opencv2/imgcodecs.hpp"
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
-#include "ellipse_detection/types.hpp"
-#include "ellipse_detection/detect.h"
-#include "ellipse_detection/compute.h"
+#include "types.hpp"
+#include "detect.h"
+#include "compute.h"
 
 using namespace std;
 using namespace cv;
