@@ -4,13 +4,13 @@
 
 
 线上体验：http://ellipsedetect.xyz/
-微信小程序搜索"椭圆识别"可以体验效果。
+
+也可以微信小程序搜索"椭圆识别"可以体验效果（小程序首次使用需要启动服务，第一张图片可能会失败，多试几次）。
 
 ![image](https://user-images.githubusercontent.com/15645203/226512866-71bbaab5-6e43-41ef-bac7-23b61733269d.png)
 
 
 # 效果展示
-
 
 
 ![图1](https://github.com/memory-overflow/standard-ellipse-detection/blob/master/images/test12_result.jpg)
