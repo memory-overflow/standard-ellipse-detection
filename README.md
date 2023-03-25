@@ -93,7 +93,10 @@ docker pull jisuanke/standard-ellipse-detection-centos7
 
 
 ## Other system
-其他操作系统请自行按照 ubuntu 和 centos 的流程安装。
+不建议在 mac 和 windows 上使用此库。mac 的兼容性比较差，我尝试在 mac 上编译，最后因为 gfortran 链接库不兼容放弃。
+windows 上的编译和使用的IDE有关，如需要使用，按照 opencv，lapack, ellipsedetect 的顺序依次编译。
+
+其他类unix的操作系统比如安卓可以自行参考 ubuntu 和 centos 的流程编译安装。
 
 # 接口和使用方法
 代码中引用头文件`#include "ellipse_detection/detect.h"`，然后引入namespace zgh。
