@@ -126,6 +126,8 @@ double goodness; // 椭圆评分
 double coverangle; // 椭圆角度完整程度
 std::vector<Pixel> inliers; // 构成的像素点
 ```
+输出的图像坐标系
+![image](https://github.com/memory-overflow/standard-ellipse-detection/assets/15645203/a6f388df-3a51-4dac-8d27-a106d496362a)
 
 
 
