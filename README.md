@@ -1,13 +1,4 @@
 # 介绍
-@Article{lu2019arc,
-title={Arc-Support Line Segments Revisited: An Efficient High-Quality Ellipse Detection},
-author={Lu, Changsheng and Xia, Siyu and Shao, Ming and Fu, Yun},
-journal={IEEE Transactions on Image Processing},
-volume={29},
-pages={768--781},
-year={2020},
-publisher={IEEE}
-}
 
 本库提供了一个可以在工业中稳定使用的椭圆检测方法。对于图像中的标准、明显、完整、大小在 100x100 像素以上的椭圆的检测效果非常好，速度也很快。
 这个库的实现参考了论文 https://arxiv.org/pdf/1810.03243v4.pdf。
@@ -151,6 +142,21 @@ make
 ```
 
 
+# 论文原文
+
+**作者：** Lu, Changsheng; Xia, Siyu; Shao, Ming; Fu, Yun
+
+**期刊：** IEEE Transactions on Image Processing（IEEE图像处理汇刊）
+
+**卷号：** 第29卷，第768–781页
+
+**年份：** 2020年
+
+**出版商：** IEEE
+
+---
+
+> Lu, C., Xia, S., Shao, M., & Fu, Y. (2020). Arc-Support Line Segments Revisited: An Efficient High-Quality Ellipse Detection. *IEEE Transactions on Image Processing*, 29, 768–781.
 
 
 有问题欢迎联系 zhengaohong@gmail.com, wechat: islands___
